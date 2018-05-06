@@ -1,8 +1,45 @@
 // http://ionicframework.com/docs/theming/
+.side-menu-item{
+    font-size: $app_main_text;
+    font-weight: bold;
+}
+.side-menu-toolbar{
+    height:150px; 
+    align-items: flex-end;
+}
 
 
+ion-app.ios [padding] .scroll-content{
+    color: color($colors,secondary);
+    background-color: color($colors,primary_dark);
+}
 // App Global Sass
 // --------------------------------------------------
+html{
+    font-size: 60%;
+}
+
+body{
+    color:color($colors,secondary);
+}
+
+.button{
+    color: color($colors,secondary);
+}
+
+.bold-text{
+    font-weight: bold
+}
+.align-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vertical-center{
+    display: flex;
+    align-items: center;
+}
+
 // Put style rules here that you want to apply globally. These
 // styles are for the entire app and not just one component.
 // Additionally, this file can be also used as an entry point

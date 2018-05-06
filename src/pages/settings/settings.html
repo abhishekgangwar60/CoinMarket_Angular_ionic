@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-title text-left>
+    General
+  </ion-title>
+  <ion-row>
+    <ion-col col-8 text-left>
+      Night Mode
+    </ion-col>
+    <ion-col col-4>
+      <ion-toggle [(ngModel)]="isNightMode" checked="isNightMode" (ionChange)="toggleApplicationTheme()"> </ion-toggle>
+    </ion-col>
+  </ion-row>
+</ion-content>

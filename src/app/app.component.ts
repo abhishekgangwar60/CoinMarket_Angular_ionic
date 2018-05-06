@@ -1,10 +1,11 @@
+import { ThemeProvider } from './../providers/theme/theme';
+import { MenuPageDeatils } from './../Common/app.constants';
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { Nav, Platform, NavController } from 'ionic-angular';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -13,18 +14,19 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
+  activeTheme: any;
+  pages: Array<any>;
 
-  pages: Array<{title: string, component: any}>;
-
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    private themeProvider: ThemeProvider) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
-    ];
-
+    // Getting the theme configurations from theme provider
+    this.themeProvider.getActiveTheme().subscribe(theme => this.activeTheme = theme);
+    // defining value of menu pages
+    this.pages = MenuPageDeatils.Pages;
   }
 
   initializeApp() {
@@ -36,9 +38,11 @@ export class MyApp {
     });
   }
 
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+  /**
+   * Opens Selected page
+   * @param pageName 
+   */
+  openPage(pageName: string) {
+    this.nav.push(pageName);
   }
 }
