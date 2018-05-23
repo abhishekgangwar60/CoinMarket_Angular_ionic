@@ -6,15 +6,22 @@
 
 
 <ion-content padding>
-  <ion-title text-left>
-    General
-  </ion-title>
-  <ion-row>
-    <ion-col col-8 text-left>
-      Night Mode
-    </ion-col>
-    <ion-col col-4>
-      <ion-toggle [(ngModel)]="isNightMode" checked="isNightMode" (ionChange)="toggleApplicationTheme()"> </ion-toggle>
-    </ion-col>
+  <!-- General -->
+  <ion-row paddin-bottom>
+    <ion-col text-left no-padding class="main-text bold-text">General</ion-col>
   </ion-row>
+  <!-- Night Mode -->
+  <ion-item no-padding>
+    <ion-label>Night Mode</ion-label>
+    <ion-toggle [(ngModel)]="isNightMode" checked="isNightMode" (ionChange)="toggleApplicationTheme()"> </ion-toggle>
+  </ion-item>
+  <!-- Currency -->
+  <ion-item no-padding>
+    <ion-label>Default Currency</ion-label>
+    <ion-select [(ngModel)]="selectedCurrency">
+      <ion-option value="USD">USD</ion-option>
+      <ion-option value="INR">INR</ion-option>
+    </ion-select>
+  </ion-item>
+
 </ion-content>

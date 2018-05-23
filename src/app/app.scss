@@ -8,11 +8,10 @@
     align-items: flex-end;
 }
 
-
-ion-app.ios [padding] .scroll-content{
-    color: color($colors,secondary);
-    background-color: color($colors,primary_dark);
+.alert-ios .alert-title{
+    color:color($colors, primary);
 }
+
 // App Global Sass
 // --------------------------------------------------
 html{
@@ -29,6 +28,13 @@ body{
 
 .bold-text{
     font-weight: bold
+}
+.main-text{
+    font-size:$app_main_text;
+}
+
+.large-text{
+    font-size: $app_large_text;
 }
 .align-center{
     display: flex;

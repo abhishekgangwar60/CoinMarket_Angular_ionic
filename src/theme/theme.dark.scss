@@ -1,10 +1,11 @@
 .dark-theme {
-    ion-content{
-        color: white;
-        background-color: black;
+   .item-ios.item-block .item-inner{
+        color: color($colors,secondary);
+        background-color: color($colors, primary_dark);
     }
-   
-    .toolbar-ios-primary .toolbar-background-ios{
-        background: black;
+
+    .scroll-content{
+        color: color($colors,secondary) !important;
+        background-color: color($colors,primary_dark) !important;
     }
 }

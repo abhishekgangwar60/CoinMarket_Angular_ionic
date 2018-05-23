@@ -1,2 +1,21 @@
 page-settings {
+.toggle .toggle-inner{
+    top:1px !important;
+    width: 28px;
+    height: 22px;
+}
+.toggle{
+    height: 25px;
+}
+.label-ios{
+    margin:15px 8px 15px 0;
+}
+.item-ios{
+    color:color($colors,secondary);
+    background-color: color($colors,primary_dark)
+}
+
+.button{
+    line-height: unset;
+}
 }

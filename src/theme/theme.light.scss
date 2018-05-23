@@ -1,9 +1,11 @@
 .light-theme{
-    ion-content{
-        color: black;
-        background-color: white;
+    .item-ios.item-block .item-inner{
+        color: color($colors,primary);
+        background-color: color($colors, secondary);
     }
-    ion-header ion-toolbar{
-        color: black;
+
+    .scroll-content{
+        color: color($colors,primary) !important;
+        background-color: color($colors,secondary) !important;
     }
 }
